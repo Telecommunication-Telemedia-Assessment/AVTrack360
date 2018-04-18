@@ -1,0 +1,25 @@
+{
+  "label":"dummy",
+  "videos":[
+    {
+      "filename":"demo.mp4",
+      "hmd":"rift",
+      "projection_scheme":"barrel360"
+    },
+    {
+      "filename":"demo1.mp4",
+      "hmd":"vive",
+      "projection_scheme":"barrel360"
+    },
+    {
+      "filename":"demo.mp4",
+      "hmd":"rift",
+      "projection_scheme":"barrel360"
+    },
+    {
+      "filename":"demo1.mp4",
+      "hmd":"vive",
+      "projection_scheme":"barrel360"
+    }
+  ]
+}

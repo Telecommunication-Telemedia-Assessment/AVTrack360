@@ -1,0 +1,28 @@
+name: pyavtrack360rec
+channels:
+- defaults
+dependencies:
+- certifi=2016.2.28=py27_0
+- pip=9.0.1=py27_1
+- python=2.7.13=1
+- setuptools=36.4.0=py27_1
+- vc=9=0
+- vs2008_runtime=9.00.30729.5054=0
+- wheel=0.29.0=py27_0
+- wincertstore=0.2=py27_0
+- pip:
+  - colorama==0.3.9
+  - comtypes==1.1.4
+  - keyboard==0.11.0
+  - numpy==1.14.1
+  - openvr==1.0.1201
+  - ovr==1.16.1
+  - pillow==5.0.0
+  - psutil==5.4.3
+  - pyautogui==0.9.36
+  - pymsgbox==1.0.6
+  - pypiwin32==219
+  - pyscreeze==0.1.13
+  - pytweening==1.0.3
+  - pywinauto==0.6.4
+  - six==1.11.0
