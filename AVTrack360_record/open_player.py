@@ -33,7 +33,7 @@ def open_player(player_name, video_path, filename, projection_scheme, hmd):
                 whirligig_opened = helpers.is_process_running("Whirligig64bit.exe")
 
             thread.start_new_thread(open_whirligig, ("videos\\" + filename, projection_scheme))
-            if hmd == "vive":
+            if hmd == "vive" or hmd == "rift":
                 # For HTC Vive wait a short moment until Whirligig player gets opened. Then set the window focus to it.
                 time.sleep(float(2))
                 helpers.set_window_focus("Whirligig", "UnityWndClass")
