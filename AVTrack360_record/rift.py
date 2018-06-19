@@ -101,4 +101,4 @@ def getPYRDataFromRift(session):
         yaw = yaw_orig
         if yaw >= 180:
             yaw = -360 + yaw_orig
-    return (pitch * -1, yaw * -1, roll * -1)
+    return (pitch, yaw, roll)

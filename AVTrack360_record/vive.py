@@ -102,4 +102,4 @@ def getPYRDataFromVive():
 
     roll_rad = np.arctan2(v[1][0], v[1][1])
     roll = float(np.degrees(roll_rad))
-    return (pitch * -1, yaw * -1, roll * -1)
+    return (pitch, yaw, roll)
