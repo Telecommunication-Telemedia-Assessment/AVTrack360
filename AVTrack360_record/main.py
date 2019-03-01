@@ -35,7 +35,7 @@ parser.add_argument("-acr", dest="acr", default=False, action="store_true", help
 parser.add_argument("-overwrite", dest="overwrite_enabled", default=False, action='store_true',
                     help="Add this parameter if you want to delete already existing filename/HMD combinations in the"
                          " already existing dataset when writing the data.")
-parser.add_argument("-videolength", dest="videolength", default=20.0, type=float)
+parser.add_argument("-videolength", dest="videolength", default=0, type=float)
 parser.add_argument("-captureviewport", dest="captureviewport", default=False, action='store_true',
                     help="Add this parameter if you want to enable the capturing of the viewport shown by Whirligig.")
 parser.add_argument("-player", dest="player", default="whirligig",
@@ -77,8 +77,11 @@ while len(playlist_data['videos']) > 0:
     video_path = os.getcwd() + "\\videos\\" + filename  # Get full path of the video
     projection_scheme = playlist_data['videos'][0]['projection_scheme']
     hmd = playlist_data['videos'][0]['hmd']
-    # Get the exact length of the video
-    video_length_in_s = arg.videolength
+    # Get the exact length of the video itself by playlist or by set parameter (without attached greyscreen and ACR scale)
+    if arg.videolength == 0:
+        video_length_in_s = float(playlist_data['videos'][0]['duration'])
+    else:
+        video_length_in_s = float(arg.videolength)
 
     setup_next_video = False
     print(Fore.LIGHTGREEN_EX + "You should be using the HMD '" + hmd + "' now." + Fore.WHITE)

@@ -4,22 +4,26 @@
 		{
 			"filename":"video1.mp4",
 			"projection_scheme":"barrel360",
-			"hmd":"vive"
+			"hmd":"vive",
+			"duration": 20.4
 		},
 		{
 			"filename":"video2.mp4",
 			"projection_scheme":"barrel360",
-			"hmd":"vive"
+			"hmd":"vive",
+			"duration": 55
 		},
 		{
 			"filename":"video3.mp4",
 			"projection_scheme":"barrel360",
-			"hmd":"rift"
+			"hmd":"rift",
+			"duration": 13.37
 		},
 		{
 			"filename":"video4.mp4",
 			"projection_scheme":"barrel360",
-			"hmd":"rift"
+			"hmd":"rift",
+			"duration": 42
 		}
 	]
 }
