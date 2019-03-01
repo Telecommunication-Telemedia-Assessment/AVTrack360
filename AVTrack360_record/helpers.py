@@ -133,17 +133,18 @@ def shift_yaw(yaw_orig, initial_yaw):
         yaw = 360 + yaw_orig - initial_yaw_abs
     return yaw
 
-def write_to_json(label, data, overwrite_enabled):
+def write_to_json(label, data, filename, overwrite_enabled):
     """
     Function to write data to a JSON file. If the file is already existing, append the new data.
 
     :param label: Label of the JSON file (equals the filename).
     :param data: JSON data to write.
+    :param filename: The name of the file.
     :param overwrite_enabled: True, if already existing filename/HMD combinations should be deleted, False otherwise.
     """
     # If JSON file is already existing, open it first, then get existing data of it.
-    if os.path.isfile('data\\' + label + '.json'):
-        with open('data\\' + label + '.json', mode='r') as existing_file:
+    if os.path.isfile('data\\' + label + '_' + filename + '.json'):
+        with open('data\\' + label + '_' + filename + '.json', mode='r') as existing_file:
             existing_json = json.load(existing_file)
             updated_json = {'label': label, 'data': []};
             if overwrite_enabled:
@@ -158,11 +159,11 @@ def write_to_json(label, data, overwrite_enabled):
                 updated_json = existing_json
             # Append the new data and write the updated JSON data to the JSON file.
             updated_json['data'].append(data)
-            with open('data\\' + label + '.json', mode='w') as updated_file:
+            with open('data\\' + label + '_' + filename + '.json', mode='w') as updated_file:
                 json.dump(updated_json, updated_file, indent=4,
                           sort_keys=True, separators=(',', ':'))
     # If JSON file is not already existing, create it and write the data to it.
     else:
-        with open('data\\' + label + '.json', mode='w') as new_file:
+        with open('data\\' + label + '_' + filename + '.json', mode='w') as new_file:
             json.dump({'label': label, 'data': [data]}, new_file, indent=4,
                       sort_keys=True, separators=(',', ':'))

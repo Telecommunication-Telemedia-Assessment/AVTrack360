@@ -78,7 +78,7 @@ def rift(label, filename, video_length_in_s, process_name, autoplay_enabled, ove
                 time.sleep(float(0.005))
         if acr:
             data["acr"] = helpers.get_acr_by_cmd_input()
-        helpers.write_to_json(label, data, overwrite_enabled)
+        helpers.write_to_json(label, data, filename.split(".")[0], overwrite_enabled)
         ovr.destroy(session)
         ovr.shutdown()
         print("Measurement done. Opening the next video if available.")
