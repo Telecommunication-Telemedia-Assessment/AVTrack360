@@ -14,7 +14,7 @@ import pyautogui
 import time
 
 
-def vive(label, filename, video_length_in_s, process_name, autoplay_enabled, overwrite_enabled, acr):
+def vive(label, filename, video_length_in_s, process_name, autoplay_enabled, overwrite_enabled, acr, captureviewport):
     """
     Obtains and saves the data captured by the HTC Vive in a JSON file.
 
@@ -57,6 +57,11 @@ def vive(label, filename, video_length_in_s, process_name, autoplay_enabled, ove
         pitch, yaw, roll = getPYRDataFromVive()
         # Define the current position of the user (very first yaw value) as initial position
         initial_yaw = yaw
+
+        # Start viewport capturing if enabled
+        if captureviewport:
+            helpers.capture_viewport(video_length_in_s, "%s_%s" % (label, filename.split(".")[0]))
+
         # Get Head orientation data from Vive in loop until the playback is finished
         while video_length_in_s > current_playback_state:
             pitch, yaw, roll = getPYRDataFromVive()
@@ -66,6 +71,7 @@ def vive(label, filename, video_length_in_s, process_name, autoplay_enabled, ove
             if current_playback_state is not None:
                 data["pitch_yaw_roll_data_hmd"].append({'pitch': pitch, 'yaw': yaw, 'roll': roll,
                                                         'sec': current_playback_state})
+                # print("Pitch/Yaw/Roll:  %s  /  %s  /  %s" % (int(pitch), int(yaw), int(roll)))
                 # By adjusting this value, you can set the recording frequency (currently 200Hz).
                 time.sleep(float(0.005))
         if acr:

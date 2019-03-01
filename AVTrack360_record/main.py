@@ -36,6 +36,8 @@ parser.add_argument("-overwrite", dest="overwrite_enabled", default=False, actio
                     help="Add this parameter if you want to delete already existing filename/HMD combinations in the"
                          " already existing dataset when writing the data.")
 parser.add_argument("-videolength", dest="videolength", default=20.0, type=float)
+parser.add_argument("-captureviewport", dest="captureviewport", default=False, action='store_true',
+                    help="Add this parameter if you want to enable the capturing of the viewport shown by Whirligig.")
 parser.add_argument("-player", dest="player", default="whirligig",
                     help="The 360 player you want to use. (Available: Whirligig, Default: Whirligig)", type=str)
 parser.add_argument("-plist", dest="playlist", default="1 Demo.json",
@@ -105,9 +107,9 @@ while len(playlist_data['videos']) > 0:
         if hmd == "rift" or hmd == "vive":
             process_name = player.open_player(arg.player, video_path, filename, projection_scheme, hmd)
         if hmd == "rift":
-            rift.rift(label, filename, video_length_in_s, process_name, arg.autoplay_enabled, arg.overwrite_enabled, arg.acr)
+            rift.rift(label, filename, video_length_in_s, process_name, arg.autoplay_enabled, arg.overwrite_enabled, arg.acr, arg.captureviewport)
         elif hmd == "vive":
-            vive.vive(label, filename, video_length_in_s, process_name, arg.autoplay_enabled, arg.overwrite_enabled, arg.acr)
+            vive.vive(label, filename, video_length_in_s, process_name, arg.autoplay_enabled, arg.overwrite_enabled, arg.acr, arg.captureviewport)
         else:
             print(Fore.LIGHTRED_EX + "This HMD is not supported at yet." + Fore.WHITE)
     # If we do not want to track the head movement data, just play the videos.

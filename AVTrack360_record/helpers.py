@@ -27,6 +27,25 @@ def autoplay_sleep(overall_sleep_duration):
         time.sleep(float(0.1))
         sleep_duration += 0.1
 
+def capture_viewport(video_length_in_s, filename):
+    """
+    This function is desired for using ffmpeg to capture the video output of a specific window. Currently, the
+    "Whirligig" window is used.
+    :param video_length_in_s: The length of the played back video in s.
+    :param filename: The filename of the played back video.
+    """
+    captureviewport_ff_base_cmd = ["tools\\ffmpeg-4.0-win64-static\\ffmpeg.exe -f gdigrab",
+                                   "-framerate 30",
+                                   "-t {video_length_in_s}",
+                                   "-i title=Whirligig",
+                                   "-y",
+                                   "data\\viewport_captures\\{filename}.mkv"]
+    captureviewport_ff_cmd = " ".join(captureviewport_ff_base_cmd).format(video_length_in_s=video_length_in_s,
+                                                                          filename=filename)
+    DETACHED_PROCESS = 0x00000008
+    subprocess.Popen(captureviewport_ff_cmd, shell=False, stdin=None, stdout=None, stderr=None, close_fds=True,
+                     creationflags=DETACHED_PROCESS)
+
 def get_acr_by_cmd_input():
     """
     Gets the ACR score from the user by simple command line type-in.
