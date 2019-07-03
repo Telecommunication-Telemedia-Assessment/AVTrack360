@@ -14,7 +14,7 @@ import pyautogui
 import time
 
 
-def rift(label, filename, video_length_in_s, process_name, autoplay_enabled, overwrite_enabled, acr):
+def rift(label, filename, video_length_in_s, process_name, autoplay_enabled, overwrite_enabled, acr, captureviewport):
     """
     Obtains and saves the data captured by the Oculus Rift in a JSON file.
 
