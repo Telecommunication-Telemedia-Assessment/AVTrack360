@@ -1,8 +1,8 @@
-label;filename;extension;projectionscheme;hmd
-dummy;demo;mp4;barrel360;rift
-dummy;demo1;mp4;barrel360;vive
-dummy;demo;mp4;barrel360;rift
-dummy;demo1;mp4;barrel360;vive
-dummy2;demo;mp4;barrel360;rift
-dummy2;demo1;mp4;barrel360;vive
-dummy3;demo;mp4;barrel360;rift
+label;filename;duration;extension;projectionscheme;hmd
+dummy;demo;11;mp4;barrel360;vive
+dummy;demo1;11;mp4;barrel360;vive
+dummy;demo;11;mp4;barrel360;vive
+dummy;demo1;11;mp4;barrel360;vive
+dummy2;demo;11;mp4;barrel360;vive
+dummy2;demo1;11;mp4;barrel360;vive
+dummy3;demo;11;mp4;barrel360;vive

@@ -37,14 +37,16 @@ def convert_to_avtrack360_playlist(csvfile):
                 # If no next label starts, just add the videos with metadata to the playlist data.
                 label = row[0]
                 filename = row[1]
-                extension = row[2]
-                projection_scheme = row[3]
-                hmd = row[4]
+                duration = row[2]
+                extension = row[3]
+                projection_scheme = row[4]
+                hmd = row[5]
                 # Only for the first row: set the label in the written playlist data.
                 if row_number == 2:
                     playlist_data = {'label': label, 'videos': []}
 
                 playlist_data['videos'].append({'filename': "%s.%s" % (filename, extension),
+                                                'duration': int(duration),
                                                 'projection_scheme': projection_scheme,
                                                 'hmd': hmd})
                 # If the last row is processed, write the playlist data to a JSON file.
@@ -71,7 +73,7 @@ def main(_):
     projection_scheme = "barrel360"
     hmd = "vive"
     subjects = 32
-    csv = ["label;filename;extension;projectionscheme;hmd"]
+    csv = ["label;filename;duration;extension;projectionscheme;hmd"]
 
     if arg.csvfile:
         convert_to_avtrack360_playlist(arg.csvfile)
