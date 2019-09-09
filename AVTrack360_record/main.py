@@ -1,7 +1,6 @@
 """
 This is the main class of the recording tool of AVTrack360.
-AVTrack360 is able to get the head orientation of the user by accessing the sensors of the
-Oculus Rift or the HTC Vive.
+AVTrack360 is able to get the head orientation of the user by accessing the sensors of the HTC Vive.
 It currently only works with Windows 7+.
 
 @author: Stephan Fremerey
@@ -13,7 +12,7 @@ import json
 import keyboard
 import open_player as player
 import os
-import rift
+#import rift
 import time
 import vive
 from argparse import ArgumentParser

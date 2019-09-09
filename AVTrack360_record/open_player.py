@@ -9,7 +9,7 @@ It currently only works with Windows 7+.
 import helpers
 import os
 import pyautogui
-import thread
+import _thread
 import time
 from subprocess import check_output  # For accessing the command line
 

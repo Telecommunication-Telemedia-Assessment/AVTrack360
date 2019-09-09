@@ -6,8 +6,10 @@ It also can obtain an ACR rating score after every video played.
 It is tested for Windows (version 7 +) devices.
 
 Currently supported HMD-devices:
-- Oculus Rift CV 1
 - HTC Vive
+Oculus Rift CV1 was officially supported in an earlier version of AVTrack360.
+Currently, it is not officially supported, but if you want to get it running using the current state of this software, you have to use Python 2.7 instead of Python 3.7.
+The reason is that the `ovr` Python package (Python bindings for Oculus Rift) is only supported for Python 2.7.
 
 Currently supported Player:
 - [Whirligig (free ZIP version)](http://www.whirligig.xyz/new-page-3)
@@ -15,7 +17,6 @@ Currently supported Player:
 ## Installation
 
 AVTrack360 requires the specific runtimes for the HMD to use:
-* [Oculus Rift native Windows packages](https://developer.oculus.com/downloads/native-windows)
 * [HTC Vive developer portal](https://developer.viveport.com/de/develop_portal)
 
 For enabling Whirligig to successfully play a variety of media formats, installing some Codecs is necessary (e.g. [LAV DirectShow filter pack](https://github.com/Nevcairiel/LAVFilters/releases)).
@@ -39,7 +40,7 @@ Afterwards, the tool is ready to run.
 
 ## Usage
 
-At first, the respective runtimes for the HMD (Oculus/SteamVR) need to be started. When using the Oculus Rift you would also have to agree on this health safety warning.
+At first, the respective runtime for the HMD (SteamVR) need to be started.
 When using the HTC Vive, please minimize the respective SteamVR windows before starting AVTrack360 as otherwise there could be some problems in the window focus of the player.
 
 If you want to know, which parameters are available for AVTrack360, just call
