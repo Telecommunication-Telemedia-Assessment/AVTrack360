@@ -55,7 +55,7 @@ def get_acr_by_cmd_input():
     acr = "0"
     while acr not in accepted_inputs:
         print("You have entered a wrong input. Please enter the ACR score again (1-5)!")
-        acr = raw_input("Please type in the subject's ACR score (1-5): ")
+        acr = input("Please type in the subject's ACR score (1-5): ")
     return acr
 
 def get_length_of_video(filename):
