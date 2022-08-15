@@ -52,7 +52,7 @@ The links to the SRCs used can be found below.
 * [17 - Angel Falls](https://www.youtube.com/watch?v=8rUwdtERUOM)
 * [18 - Holifest](https://downloadarte-a.akamaihd.net/arte360/Arte-Wolfskinder-Langfilm/video/download/4K/Arte-Wolfskinder-Langfilm_4K.mp4)
 * [19 - Nerf battle](https://www.youtube.com/watch?v=JgWUIwqvvow)
-* [20 - Football](https://www.youtube.com/watch?v=ZGx1mWonsh8)
+* [20 - Football](https://youtu.be/VUtNsBEdXNU)
 
 ## FFmpeg commands
 The FFmpeg commands used for cutting the parts of the SRCs used in the tests can be found in `ffmpegcmds.bat`.
