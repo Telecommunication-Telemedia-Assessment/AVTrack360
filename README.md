@@ -1,4 +1,5 @@
 # AVTrack360
+[![DOI](https://zenodo.org/badge/130093871.svg)](https://zenodo.org/badge/latestdoi/130093871)
 
 This repository contains AVTrack360, a tool for recording the 3 rotation angles Pitch/Yaw/Roll around the 3 Axes X/Y/Z while a user is watching an omnidirectional video via an HMD.
 The recorded data can also be evaluated.
